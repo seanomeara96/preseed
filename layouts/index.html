@@ -1,120 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Site.Title }}</title>
-    {{ $style := resources.Get "css/main.css" | resources.PostCSS  (dict "config" "./postcss.config.js") | resources.Minify | resources.Fingerprint "sha512"  }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}"> 
-</head>
-<body>
-    <nav class="nav page-section">
-        <div class="wrapper">
-            <div class="nav__primary__container">
-                <span class="nav__logo"><img src="/logo.jpg" alt=""></span>
-                <span class="nav__button">&equiv;</span>
-            </div>
-            <ul class="nav__secondary__container">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/about">Where To Find</a></li>
+{{ define "main" }}
+
+<main class="page-section">
+    <div class="wrapper">
+        <h1 class="header">Pre-Seed™ Fertility Lubricant</h1>
+        <div class="slider">
+            <img class="shadow-img" src="/preseed1.jpg" alt="">
+            <img class="shadow-img" src="/preseed2.jpg" alt="">
+            <img class="shadow-img" src="/preseed3.jpg" alt="">
+        </div>
+        <div>&#11088;&#11088;&#11088;&#11088;&#11088; (975) Read reviews</div>
+        <div class="button__container">
+            <a class="button button--primary" href="https://inhealth.ie/preseed-2">Buy Online</a>
+            <a class="button button--secondary" href="#where-to-buy">Where To Buy</a>
+        </div>
+        <div class="product-info">
+            <ul>
+                <li>
+                    <img src="/friendly.png" alt="">
+                    <span>Clinically tested formula</span>
+                </li>
+                <li>
+                    <img src="/mimics.png" alt="">
+                    <span>Designed to be isotonic and pH balanced similar to that of the vaginal environment to aid in supporting sperm survival</span>
+                </li>
+                <li>
+                    <img src="clinical.png" alt="">
+                    <span>Developed by doctors, used by fertility clinics</span>
+                </li>
+                <li>
+                    <img src="/friendly.png" alt="">
+                    <span>Helps support sperm quality</span>
+                </li>
             </ul>
         </div>
-    </nav>
-    <main class="page-section">
-        <div class="wrapper">
-            <h1 class="header">Pre-Seed™ Fertility Lubricant</h1>
-            <div class="slider">
-                <img class="shadow-img" src="/preseed1.jpg" alt="">
-                <img class="shadow-img" src="/preseed2.jpg" alt="">
-                <img class="shadow-img" src="/preseed3.jpg" alt="">
-            </div>
-            <div>&#11088;&#11088;&#11088;&#11088;&#11088; (975) Read reviews</div>
-            <div class="button__container">
-                <a class="button button--primary" href="https://inhealth.ie/preseed-2">Buy Online</a>
-                <a class="button button--secondary" href="#where-to-buy">Where To Buy</a>
-            </div>
-            <div class="product-info">
-                <ul>
-                    <li>
-                        <img src="/friendly.png" alt="">
-                        <span>Clinically tested formula</span>
-                    </li>
-                    <li>
-                        <img src="/mimics.png" alt="">
-                        <span>Designed to be isotonic and pH balanced similar to that of the vaginal environment to aid in supporting sperm survival</span>
-                    </li>
-                    <li>
-                        <img src="clinical.png" alt="">
-                        <span>Developed by doctors, used by fertility clinics</span>
-                    </li>
-                    <li>
-                        <img src="/friendly.png" alt="">
-                        <span>Helps support sperm quality</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </main>
+    </div>
+</main>
 
-    <section class="page-section">
-        <div class="wrapper">
-            <h2 class="header">About this Product</h2>
-            <div class="key-info">
-                <h3 class="header">Key Information</h3>
-                <em>Pre-Seed™ Fertility Lubricant for Use by Couples Trying to Conceive</em>
-                <p>Your fertility journey is unique, so avoid comparing it to others. Pre-Seed™ Fertility Lubricant can support you wherever you are in your journey.</p>
+<section class="page-section" id="about">
+    <div class="wrapper">
+        <h2 class="header">About this Product</h2>
+        <div class="key-info">
+            <h3 class="header">Key Information</h3>
+            <em>Pre-Seed™ Fertility Lubricant for Use by Couples Trying to Conceive</em>
+            <p>Your fertility journey is unique, so avoid comparing it to others. Pre-Seed™ Fertility Lubricant can support you wherever you are in your journey.</p>
+            <div>
+                <div>Pre-Seed™ Fertility Lubricant is designed to enhance comfort during intimate sexual activity and support sperm survival by being isotonic and pH balanced with the vaginal environment. It can provide support for women on their fertility journey.</div>
                 <div>
-                    <div>Pre-Seed™ Fertility Lubricant is designed to enhance comfort during intimate sexual activity and support sperm survival by being isotonic and pH balanced with the vaginal environment. It can provide support for women on their fertility journey.</div>
-                    <div>
-                        <p><strong>PRE-SEED™ FERTILITY LUBRICANT</strong></p>
-                        <ul>
-                            <li>For use by couples when trying to conceive</li>
-                            <li>Clinically Tested Formula</li>
-                            <li>Helps support sperm quality</li>
-                            <li>Developed by Doctors, used in fertility clinics</li>
-                        </ul>
-                    </div>
+                    <p><strong>PRE-SEED™ FERTILITY LUBRICANT</strong></p>
+                    <ul>
+                        <li>For use by couples when trying to conceive</li>
+                        <li>Clinically Tested Formula</li>
+                        <li>Helps support sperm quality</li>
+                        <li>Developed by Doctors, used in fertility clinics</li>
+                    </ul>
                 </div>
             </div>
-
-            <div id="how-to-use">
-                <h3 class="header">How To Use</h3>
-                <div class="instructional-images">
-                    <img class="shadow-img" src="/example1.png" alt="">
-                    <img class="shadow-img" src="/example2.png" alt="">
-                </div>
-                <p><strong>Instructions for How to Use Pre-Seed Fertility Friendly lubricant</strong></p>
-                <p>To use Pre-Seed™ Fertility Lubricant, push the applicator plunger in, twist it onto the tube, and fill it with the desired amount of lubricant.</p>
-                <p>Insert the applicator gently into the vagina, dispense the lubricant by pushing the plunger, and remove and discard the applicator.</p>
-                <p>Use each applicator only once and do not reuse them. It's recommended to apply the lubricant 15 minutes before intercourse, and it can be applied up to an hour before.</p>
-            </div>
         </div>
-    </section>
 
-    <section class="page-section">
-        <div class="wrapper">
-            <div id="where-to-buy">
-                <h2 class="header">Where to Buy</h2>
-                <p>Preseed's Sperm Friendly Lubricant is available for sale with next day delivery on these stores:</p>
-                <ul class="stores">
-                    <li>
-                        <img src="/inhealth.jpg" alt="">
-                        <a href="https://www.inhealth.ie/preseed-sperm-friendly-lubricant/">InHealth.ie</a>
-                    </li>
-                    <li>
-                        <img src="/pandb.jpg" alt="">
-                        <a href="https://www.pregnancyandbaby.ie/preseed-sperm-friendly-lubricant/">PregnancyAndBaby.ie</a>
-                    </li>
-                </ul>
+        <div id="how-to-use">
+            <h3 class="header">How To Use</h3>
+            <div class="instructional-images">
+                <img class="shadow-img" src="/example1.png" alt="">
+                <img class="shadow-img" src="/example2.png" alt="">
             </div>
+            <p><strong>Instructions for How to Use Pre-Seed Fertility Friendly lubricant</strong></p>
+            <p>To use Pre-Seed™ Fertility Lubricant, push the applicator plunger in, twist it onto the tube, and fill it with the desired amount of lubricant.</p>
+            <p>Insert the applicator gently into the vagina, dispense the lubricant by pushing the plunger, and remove and discard the applicator.</p>
+            <p>Use each applicator only once and do not reuse them. It's recommended to apply the lubricant 15 minutes before intercourse, and it can be applied up to an hour before.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="footer">
-        <p>&copy; 2023 I Love Shopping Group. All rights reserved.</p>
+<section class="page-section">
+    <div class="wrapper">
+        <div id="where-to-find">
+            <h2 class="header">Where to Find</h2>
+            <p>Preseed's Sperm Friendly Lubricant is available for sale with next day delivery on these stores:</p>
+            <ul class="stores">
+                <li>
+                    <img src="/inhealth.jpg" alt="">
+                    <a href="https://www.inhealth.ie/preseed-sperm-friendly-lubricant/">InHealth.ie</a>
+                </li>
+                <li>
+                    <img src="/pandb.jpg" alt="">
+                    <a href="https://www.pregnancyandbaby.ie/preseed-sperm-friendly-lubricant/">PregnancyAndBaby.ie</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-    </footer>
-</body>
-</html>
+{{ end }}

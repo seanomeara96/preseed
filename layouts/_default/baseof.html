@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    {{ $style := resources.Get "css/main.css" | resources.PostCSS  (dict "config" "./postcss.config.js") | resources.Minify | resources.Fingerprint "sha512"  }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}"> 
+</head>
+<body>
+    <nav class="nav page-section">
+        <div class="wrapper">
+            <div class="nav__primary__container">
+                <a href="/" class="nav__logo"><img src="/logo.jpg" alt=""></a>
+                <span class="nav__button">&equiv;</span>
+            </div>
+            <ul class="nav__secondary__container">
+                <li><a href="#about">About</a></li>
+                <li><a href="#how-to-use">How to Use</a></li>
+                <li><a href="#where-to-find">Where To Find</a></li>
+            </ul>
+        </div>
+    </nav>
+    {{ block "main" . }}
+    {{ end }}
+    {{ .Content }}
+    <footer class="footer">
+        <p>&copy; 2023 I Love Shopping Group. All rights reserved.</p>
+    </footer>
+    <script>
+        try {
+            const navBtn = document.querySelector(".nav__button")
+            const secondaryContainer = document.querySelector(".nav__secondary__container")
+            navBtn.addEventListener("click", function(){
+                secondaryContainer.classList.toggle("nav__secondary__container--is-visible")
+            })
+        }catch (err) {
+            console.error(err)
+        }
+    </script>
+</body>
+</html>
