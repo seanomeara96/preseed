@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+   <div class="page-section">
+    <div class="wrapper">
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Description }}</p>
+    </div>
+   </div>
+
+    <div class="page-section">
+        <div class="wrapper">
+            {{ range .Site.Data.faq }}
+            <h2>{{ .Question }}</h2>
+            <p>{{ .Answer }}</p>
+            {{ end }}
+        </div>
+    </div>
+
+{{ end }}
